@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --modal-duration: 1s;
+  --burnt-orange: #bf4320;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#overlay {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-family: Arial;
+  font-weight: bolder;
+  z-index: 1;
+}
+
+#title {
+  font-size: 2rem;
+  color: #822433;
+  text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white,
+    1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+}
+
+#instruction {
+  font-size: 1rem;
+  text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white,
+    1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+}
+
+.button {
+  background: #428bca;
+  padding: 1em 2em;
+  color: #000000;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #3876ac;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 360px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background: #ffffff;
+  padding: 15px;
+  color: #000000;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.modal-footer {
+  background: #dddddd;
+  padding: 10px;
+  color: #000000;
+  text-align: center;
+  font-size: 17px;
+  font-weight: normal;
+  display: none;
+}
+
+.location {
+  width: 308px;
+  padding: 4px;
+}
+
+.requestDetails {
+  width: 300px;
+  padding: 8px;
+}
+
+.categorySelect {
+  width: 320px;
+  padding: 4px;
+}
+
+.close {
+  color: #333333;
+  float: right;
+  font-size: 30px;
+  margin-top: -6px;
+  margin-right: 6px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.submitTicket {
+  color: white;
+  background-color: #bf4320;
+  cursor: pointer;
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: white;
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.marker-info {
+  position: absolute;
+  background-color: white;
+  top: -75%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  padding: 0.2rem;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  font-size: 12px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.marker-info:after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  margin-left: -7px;
+  margin-bottom: -7px;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.alarm-marker {
+  pointer-events: all;
+  background-color: red;
+  opacity: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.alarm-marker > img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+}

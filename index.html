@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mappedin SDK - Work ticketing</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <div id="overlay">
+      <div id="title">TREKK HQ Work Order Manager</div>
+      <div id="instruction">Click to add a location-based work ticket.</div>
+    </div>
+    <div id="my-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Work Request</h2>
+        </div>
+        <div class="modal-body">
+          <label for="location">Location:</label><br />
+          <input
+            type="text"
+            id="location"
+            name="location"
+            class="location"
+          /><br /><br />
+          <label for="category">Category:</label><br />
+          <select name="category" id="category" class="categorySelect">
+            <option value="maintenance">Maintenance</option>
+            <option value="custodial">Custodial</option>
+            <option value="security">Safety/Security</option>
+            <option value="technology">Technology</option></select
+          ><br /><br />
+          <label for="requestDetails">Request Details:</label><br />
+          <textarea
+            id="requestDetails"
+            name="requestDetails"
+            class="requestDetails"
+            rows="4"
+            cols="40"
+          ></textarea
+          ><br /><br />
+          <span class="submitTicket">Submit</span><br /><br />
+        </div>
+        <div class="modal-footer">Work Ticket Submitted</div>
+      </div>
+    </div>
+    <script src="src/index.ts"></script>
+  </body>
+</html>
